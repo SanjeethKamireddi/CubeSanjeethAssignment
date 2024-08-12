@@ -8,8 +8,8 @@ interface CustomerListProps {
   selectedCustomerId: number | null;
 }
 
-const ROW_HEIGHT = 150; // Adjust based on your row height
-const WIDTH = 300; // Adjust based on the width of your customer card
+const ROW_HEIGHT = 150;
+const WIDTH = 300;
 
 const CustomerList: React.FC<CustomerListProps> = ({ customers, onSelectCustomer, selectedCustomerId }) => {
   const Row = ({ index, style }: { index: number; style: React.CSSProperties }) => {
@@ -29,7 +29,7 @@ const CustomerList: React.FC<CustomerListProps> = ({ customers, onSelectCustomer
 
   return (
     <List
-      height={1000} // Adjust based on the height of your container
+      height={1000}
       itemCount={customers.length}
       itemSize={ROW_HEIGHT}
       width={WIDTH}
