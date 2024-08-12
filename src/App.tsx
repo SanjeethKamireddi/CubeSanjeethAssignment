@@ -9,12 +9,11 @@ const App: React.FC = () => {
   const [selectedCustomerId, setSelectedCustomerId] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchedCustomers: Customer[] = [
-      { id: 1, name: 'Customer 01', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic' },
-      { id: 2, name: 'Customer 02', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic' },
-      { id: 3, name: 'Customer 03', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic' },
-      { id: 4, name: 'Customer 04', title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic' },
-    ];
+    const fetchedCustomers: Customer[] = Array.from({ length: 1000 }, (_, index) => ({
+      id: index + 1,
+      name: `Customer ${index + 1}`,
+      title: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s...',
+    }));
     setCustomers(fetchedCustomers);
   }, []);
 
